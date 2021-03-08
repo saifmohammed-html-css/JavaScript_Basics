@@ -105,11 +105,11 @@ function myFunction() {
 console.log("");
 console.log("<-----Object----->");
 var employeeObject = {
-    name: "Mohammed Saif",
-    age: 24,
-    email: "saifmohammed888@gmail.com",
-    designation: "Software Engineer",
-    jobDescription: function () {
+    "name": "Mohammed Saif",
+    "age": 24,
+    "email": "saifmohammed888@gmail.com",
+    "designation": "Software Engineer",
+    "jobDescription": function () {
         return "Working on building responsive web and mobile applications";
     }
 }
@@ -277,9 +277,113 @@ console.log("Array to find an element: " + findArray);
 //Dates
 console.log("");
 console.log("<!--JavaScript dates-->");
+var date = new Date();
+console.log("Passing year parameter to Constructor: " + date);
+// console.log("Getting full year using method : " + date.getFullYear());
+// console.log("Getting full month using method : " + date.getMonth());
+// console.log("Getting date using method : " + date.getDate());
+// console.log("Getting day of week using method : " + date.getDay());
+// console.log("Getting hour using method : " + date.getHours());
+// console.log("Getting minutes using method : " + date.getMinutes());
+// console.log("Getting minutes using method : " + Date.now());
+
+//Math functions
+console.log("");
+console.log("<--Math functions-->");
+console.log(Math.round(12.3343));
+// console.log(Math.ceil(12.3343));
+// console.log(Math.floor(12.3343));
+// console.log(Math.trunc(15.3343));
+// console.log(Math.pow(2, 4));
+// console.log(Math.sqrt(64));
+// console.log(Math.min(2, 4, 1, 3, 5, 6, 7, 8));
+// console.log(Math.max(2, 4, 6, 7, 8, 9));
+// console.log(Math.random(2));
+
+//Random function
+console.log("");
+console.log("<--Random function-->");
+console.log(Math.floor(Math.random(1) * 100));
+
+//Conditional Statements
+
+if (age >= 18) {
+    console.log("The user is eligible to vote");
+}
+else {
+    console.log("User to is too young to be part of voting!!");
+}
+
+//Switch
+console.log("");
+console.log("<--Switch-->");
+let jobCode = 4;
+switch (jobCode) {
+
+    case 1:
+        console.log("Software Engineer");
+        break;
+    case 2:
+        console.log("Business Analyst");
+        break;
+    case 3:
+        console.log("QA Tester");
+        break
+    default:
+        console.log("Job role not found!!");
+}
 
 
-// var date = new Date();
-// console.log("Using Default Constructor: " + date);
-var date1 = new Date(2019);
-console.log("Passing year parameter to Constructor: " + date1);
+//Looping statements
+console.log("");
+console.log("<--Looping-->");
+
+let Arr = ["Mohammed Saif", "Mohammed Salman", "Mohammed Suhaib", "Zoya Afreen", "Tabbasum"];
+console.log("");
+console.log("Using for loop");
+for (let i = 0; i < Arr.length; i++) {
+    console.log(Arr[i]);
+}
+
+//for in
+console.log("")
+console.log("<--for in loop-->");
+var employee = [
+    {
+        name: "saif",
+        age: 24
+    },
+    {
+        name: "Salman",
+        age: 27
+    }
+]
+
+for (let key in employee) {
+    console.log(key);
+}
+
+//for of loop
+console.log("")
+console.log("<--for of loop-->");
+for (let key of employee) {
+    console.log(key);
+}
+
+// While loop
+console.log("")
+console.log("<--while loop-->");
+let x = 0;
+while (x < 3) {
+    console.log("While");
+    x++;
+}
+
+//Do While loop
+console.log("")
+console.log("<--Do while loop-->");
+do {
+    console.log("do While");
+    --x;
+}
+while (x == 0);
