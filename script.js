@@ -387,3 +387,122 @@ do {
     --x;
 }
 while (x == 0);
+
+
+//Hoisting
+console.log("")
+console.log("<--Hoisting-->");
+t = 15;
+console.log(t);
+
+
+//IIFE
+console.log("");
+console.log("<--IIFE-->");
+(function () {
+    console.log("immediately invoked function or self invoked function");
+})();
+
+
+//apply method
+
+
+//Call method
+console.log("");
+console.log("<--Call method-->");
+let person = {
+    details: function () {
+        console.log(this.name + ": " + this.age);
+    }
+}
+
+
+let p1 = { "name": "saif", "age": 24 }
+let p2 = { "name": "Salman", "age": 20 }
+
+person.details.call(p1);
+
+//Apply method
+console.log("");
+console.log("<--Apply method-->");
+let person1 = {
+    details: function (eng) {
+        console.log(this.name + ": " + this.age + " " + eng);
+    }
+}
+
+let p3 = { "name": "saif", "age": 24 }
+let p4 = { "name": "Salman", "age": 20 }
+
+person1.details.apply(p2, ["Software Engineer"]);
+
+//Closure
+console.log("");
+console.log("<--Closure-->");
+var sum = (function () {
+    var counter = 0;
+    return function () {
+        counter += 1;
+        return counter;
+    }
+})();
+
+
+sum();
+sum();
+console.log(sum());
+
+//Callback
+
+console.log("");
+console.log("<--callback-->");
+
+var display = (result) => {
+    console.log("Using callback: " + result);
+}
+
+var calculator = (a, b, mycb) => {
+    let sum = a + b;
+    mycb(sum);
+}
+
+calculator(10, 15, display);
+
+//Asynchronous 
+console.log("");
+console.log("<--Asynchronous-->");
+setTimeout(function () { console.log("set timeout is running asynchonously") }, 2000);
+
+//Promises
+console.log("");
+console.log("<--Promise-->");
+let promise = new Promise((myResolve, myReject) => {
+
+    let x = 20;
+    if (x > 18) {
+        myResolve("OK");
+    }
+    else {
+        myReject("Error");
+    }
+});
+
+promise
+    .then((value) => console.log(value))
+    .catch((value) => console.log(value));
+
+setTimeout(() => { console.log("I love promises") }, 1000)
+
+
+//Async and await
+console.log("");
+console.log("<--Async await-->");
+
+async function data() {
+    setTimeout(function () {
+        return "Saif"
+    }, 3000);
+}
+
+data()
+    .then((value) => console.log(value))
